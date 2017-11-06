@@ -1,16 +1,20 @@
 package jp.maeda.shohei.humanclass;
 
-public class Human extends Animal {
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-    //コンストラクタ
-    public Human(String name, int age) {
-        this.name = name;
-        this.age = age;
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Human maeda = new Human("maeda",22,"soccer");
+        maeda.say();
+        Human ushiroda = new Human("ushiroda",22,"baseball");
+        ushiroda.say();
+        maeda.think();
+        ushiroda.think();
     }
 
-    //メンバ関数
-    public void say() {
-        Log.d("javatest", "私の名前は" ＋ this.name ＋ "です。年は" ＋　this.age　＋ "歳です。" );
-    }
 }
-
